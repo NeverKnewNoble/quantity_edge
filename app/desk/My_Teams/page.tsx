@@ -1,0 +1,12 @@
+
+
+export default function My_Teams() {
+    return (
+      <div className="w-full bg-black min-h-screen px-[60px] py-[40px]">
+      <h1 className="text-[40px] text-white font-bold font-serif">My Team</h1>
+      <hr></hr>
+    </div>
+    );
+  }
+
+
