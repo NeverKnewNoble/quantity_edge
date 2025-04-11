@@ -1,15 +1,21 @@
+"use client"
+
 import Navbar from '@/components/general/navbar';
 import Footer from '@/components/general/footer';
 import SpotlightCard from '@/components/home_page/spotlightCard';
 import { Icon } from '@iconify/react';
+import Modal from '@/components/home_page/modal';
+import { useState } from 'react';
 
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <div className="w-full min-h-screen">
 
       {/* Hero Section with Background Video */}
-      <section className="relative w-full min-h-screen md:h-[650px] flex items-center justify-start overflow-hidden">
+      <section className="relative w-full min-h-screen md:h-[650px] flex items-center justify-center overflow-hidden">
         {/* Background Video (Confined to the section) */}
         <div className="absolute bg-black inset-0 w-full h-full overflow-hidden">
           <video 
@@ -27,19 +33,28 @@ export default function Home() {
         <Navbar />
 
         {/* Content */}
-        <div className="relative z-10 text-white px-6 md:px-[80px]">
+        <div className="relative flex flex-col items-center text-center text-white px-6 md:px-[80px] space-y-6">
           {/* Title Text */}
-          <div className="text-[60px] md:text-[130px] font-bold leading-none font-serif">
-            Quantity
-            <span className="inline-block md:block md:-mt-[20px]">Edge</span>
-          </div>
-          
+          <h1 className="text-[42px] md:text-[60px] font-bold leading-tight font-serif text-white">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
+              Instant BOQ Estimates for Smarter Building Decisions
+            </span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="text-lg md:text-xl max-w-3xl text-gray-300">
+            Simply enter the length and height of your wall, and let Quantity Edge do the rest. 
+            Get accurate material estimates for a hassle-free construction experience.
+          </p>
+
           {/* Buttons */}
-          <div className="mt-3 flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3"> 
-            <button className="bg-white text-black hover:text-white hover:bg-black py-3 px-6 font-semibold rounded-full w-[200px] transition-colors">
-              Get Started
+          <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4"> 
+            <button className="text-white bg-blue-400 py-3 px-6 font-semibold rounded-full shadow-md hover:bg-gray-200 hover:text-black transition-all duration-300">
+              Estimate Now 🚧
             </button>
-            <button className="text-white border border-white hover:text-black hover:bg-white py-3 px-6 font-semibold rounded-full transition-colors">
+            <button 
+              onClick={() => setIsOpen(true)}
+              className="text-white border border-gray-500 hover:text-black hover:bg-white py-3 px-6 font-semibold rounded-full transition-all duration-300">
               Learn More
             </button>
           </div>
@@ -86,6 +101,18 @@ export default function Home() {
         </div>
       </section>
 
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="About Us"
+        content="Quantity Edge is a powerful Bill of Quantity (BOQ) calculator designed to simplify construction project 
+        planning for contractors, engineers, and individuals. With an intuitive workflow, it automates material estimation, 
+        helping users accurately calculate blocks, cement, sand, and reinforcement steel based on project specifications. 
+        Key features include a Block Estimator, Material Estimator, Rebar Estimator (Optional), Auto-Calculation of Totals, 
+        and Work Section Grouping for better organization. Users can export BOQs to PDF and Excel, making documentation seamless. 
+        The paid tier unlocks Team Chat, Collaborative Editing, and Activity Logging, ensuring smooth teamwork and tracking of project changes. 
+        With Quantity Edge, managing construction projects is faster, more efficient, and error-free."
+      />
 
       <Footer />
     </div>
