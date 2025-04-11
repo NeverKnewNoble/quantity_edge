@@ -9,19 +9,21 @@ interface Project {
   
   const RecentProjectsCard: React.FC<RecentProjectsCardProps> = ({ projects }) => {
     return (
-      <div className="bg-[#18181a] text-white w-80 h-[320px] p-4 rounded-xl shadow-lg">
+      <div className="bg-[#18181a] text-white w-full h-full md:w-96 p-4 rounded-xl shadow-lg">
         {/* Header */}
         <h3 className="text-lg font-semibold mb-4">Recent Projects</h3>
         
         {/* Project List */}
-        <ul className="space-y-3">
-          {projects.map((project, index) => (
-            <li key={index} className="flex justify-between items-center bg-[#e71746] p-3 rounded-lg">
-              <span className="text-sm font-medium">{project.name}</span>
-              <span className="text-xs text-[#edf7ff]">{project.timeOpened}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="max-h-[220px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#e71746] scrollbar-track-[#18181a]">
+          <ul className="space-y-3">
+            {projects.map((project, index) => (
+              <li key={index} className="flex justify-between items-center bg-blue-600 p-3 rounded-lg">
+                <span className="text-sm font-medium">{project.name}</span>
+                <span className="text-xs text-[#edf7ff]">{project.timeOpened}</span>
+              </li>
+            ))}
+          </ul>
+        </div> 
       </div>
     );
   };

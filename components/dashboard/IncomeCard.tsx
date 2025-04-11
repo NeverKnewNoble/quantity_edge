@@ -9,7 +9,8 @@ interface IncomeCardProps {
 
 const IncomeCard: React.FC<IncomeCardProps> = ({ title, amount, previousAmount, icon }) => {
   return (
-    <div className="bg-[#18181a] hover:scale-105 transition-transform text-white p-4 rounded-xl shadow-lg w-[350px] h-[150px] align-middle justify-between flex flex-col-2 gap-2">
+    <div 
+    className="bg-[#18181a] hover:scale-105 transition-transform text-white p-4 rounded-xl shadow-lg w-full h-[150px] align-middle justify-between flex flex-col-2 gap-2">
       <div>
         <h3 className="text-md font-medium text-white">{title}</h3>
         <p className="text-[40px] text-white font-semibold">${amount.toLocaleString()}</p>
@@ -17,7 +18,7 @@ const IncomeCard: React.FC<IncomeCardProps> = ({ title, amount, previousAmount, 
       </div>
 
       {/* Icon Placeholder */}
-      <div className="mt-3 flex justify-end items-center text-blue-500">{icon}</div>
+      {/* <div className="mt-3 flex justify-end items-center text-blue-500">{icon}</div> */}
     </div>
   );
 };

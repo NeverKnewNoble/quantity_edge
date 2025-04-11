@@ -4,6 +4,7 @@ export default {
       "./index.html",
       "./src/**/*.{js,ts,jsx,tsx}",
       "./node_modules/flyonui/dist/js/*.js",
+      "./node_modules/flyonui/dist/**/*.{js,ts,jsx,tsx}",
       "./app/**/*.{js,ts,jsx,tsx}",
       "./components/**/*.{js,ts,jsx,tsx}",
     ],
@@ -17,8 +18,9 @@ export default {
         },
       },
     },
-    plugins: [
-        require("flyonui"),
-        require("flyonui/plugin")
-    ],
+    plugins: [    
+      require("flyonui"),
+      require("flyonui/plugin"),
+      require("tailwind-scrollbar")
+    ]
 }

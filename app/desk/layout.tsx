@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import Dock from "@/components/general/dock";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
+import DeskNavbar from "@/components/general/desknav";
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,7 +23,9 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="flex max-h-screen ">
+    <div className=" max-h-screen ">
+      <DeskNavbar/>
+
       {/* <Dock items={items} panelHeight={68} baseItemSize={50} magnification={70} /> */}
       <div className="flex-1 ">{children}</div>
 
