@@ -1,5 +1,6 @@
 "use client";
 
+import { X } from "lucide-react";
 import { useState } from "react";
 
 interface ModalProps {
@@ -15,12 +16,12 @@ export default function Modal({ title = "Dialog Title", content, isOpen, onClose
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 text-white">
-      <div className="bg-[#18181a] rounded-lg shadow-lg w-[1000px] ">
+      <div className="bg-[#18181a] rounded-lg shadow-lg w-[700px] ">
         {/* Modal Header */}
         <div className="flex justify-between items-center p-4 border-b">
           <h3 className="text-[40px] font-bold">{title}</h3>
           <button className="text-white text-[20px] mr-2 hover:text-gray-700" onClick={onClose} aria-label="Close">
-            X
+          <X />
           </button>
         </div>
 
