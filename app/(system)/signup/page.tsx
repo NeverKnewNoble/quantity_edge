@@ -12,6 +12,7 @@ export default function signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  
 
   return (
     <div className="min-h-screen w-full flex text-white">
