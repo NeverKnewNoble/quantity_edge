@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 // toast
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'; 
+import Loading from '@/app/loading';
 
 
 export default function Login() {
@@ -14,6 +15,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const notyf = new Notyf({
     position: { x: 'right', y: 'top' },
     dismissible: true
@@ -38,8 +40,23 @@ export default function Login() {
   return (
     <div className="min-h-screen w-full flex text-white">
 
+      {/* //**Loading Logic */}
+      {isLoading && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#18181a]">
+          <Loading />
+        </div>
+      )}
+
       <div className="w-1/2 min-h-screen">
-        <img src="/images/lg.jpg" alt="Cover image" className="w-full h-full object-cover" />
+        <img 
+        src="/images/lg.jpg" 
+        alt="Cover image" 
+        // className="w-full h-full object-cover" 
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        onLoad={() => setIsLoading(false)}
+        />
       </div>
 
   
