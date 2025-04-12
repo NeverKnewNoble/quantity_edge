@@ -1,4 +1,8 @@
-import { CircleFadingPlus } from "lucide-react";
+"use client";
+
+import ProjectCard from "@/components/boq/ProjectCard";
+import RadialProgress from "@/components/boq/RadialProgress";
+import { CircleFadingPlus, Pencil, Trash2   } from "lucide-react";
 
 
 export default function BOQ() {
@@ -27,10 +31,116 @@ export default function BOQ() {
         </div>
 
         {/* List Of Projects */}
-        <div className="min-w-full p-4 grid grid-col lg:grid-cols-3  min-h-screen mt-2  gap-2">
-            <div className="min-w-[400px] p-6 border rounded-md h-[400px]">
-              card
-            </div>
+        <div className="min-w-full p-4 grid grid-col lg:grid-cols-3  min-h-[320px] mt-2  gap-2">
+
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
+          <ProjectCard
+            name="Project Name"
+            createdAt="2025/03/16"
+            items="20,000 items"
+            sections="20 sections"
+            estimatedSum="$10,000"
+            amountPaid="$2,000"
+            sum={10000}
+            spent={2000}
+            onEdit={() => console.log("Edit clicked")}
+            onDelete={() => console.log("Delete clicked")}
+          />
 
         </div>
       </div>

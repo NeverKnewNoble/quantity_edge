@@ -8,10 +8,9 @@ export const LoginFunction = async(e: React.FormEvent, user: User) => {
             email: user.email,
             password: user.password
         });
-        console.log("Login Successful:", data);
+        // console.log("Login Successful:", data);
         return data;
     } catch(error: any) {
-        alert("Failed Attempt");
-        console.error("Failed Request", error.message);
+        // console.error("Failed Request", error.message);
     }
 };

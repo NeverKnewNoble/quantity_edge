@@ -4,23 +4,31 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { LoginFunction } from "@/utils/login"
 import { useRouter } from 'next/navigation';
+// toast
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css'; 
+
 
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-
+  const notyf = new Notyf({
+    position: { x: 'right', y: 'top' },
+    dismissible: true
+  });
+  
 
   // !Login Handle 
   const handleLogin = async (e: React.FormEvent) => {
     const result = await LoginFunction(e, { email, password });
   
     if (result?.message === "Login successful") {
-      alert("Success");
+      notyf.success('Success! Logged In.');
       router.push("/desk/Dashboard");
     } else {
-      alert("Login failed. Try again.");
+      notyf.error('Oops! Login failed. Try again.');
     }
   };
   
