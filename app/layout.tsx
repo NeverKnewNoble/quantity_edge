@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FlyonuiScript from '../components/FlyonuiScript';
+import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 
 
 
@@ -31,8 +32,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-     
+        <PageTransitionWrapper>
         {children}
+        </PageTransitionWrapper>
       </body>
     </html>
   );
