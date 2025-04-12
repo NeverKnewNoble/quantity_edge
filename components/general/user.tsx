@@ -36,7 +36,14 @@ export default function UserComponent() {
   const logout = async () => {
       const res = await axios.post("/api/auth/logout");
       if(res.status === 200) {
-        router.replace("/");
+        // router.replace("/");
+        if (window.location.pathname === "/") {
+          // If already on the homepage, reload the page
+          window.location.reload();
+        } else {
+          // If on a different page, redirect to the homepage
+          router.replace("/");
+        }
       } else {
         alert("failed to logout");
         console.error("Failed")
