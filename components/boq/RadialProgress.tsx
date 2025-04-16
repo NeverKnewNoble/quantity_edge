@@ -41,8 +41,7 @@ interface RadialProgressProps {
           />
         </svg>
         <span
-          className="absolute text-sm font-semibold"
-          style={{ color: "#3b82f6" }}
+          className="absolute text-lg font-semibold text-white"
         >
           {progress}%
         </span>
